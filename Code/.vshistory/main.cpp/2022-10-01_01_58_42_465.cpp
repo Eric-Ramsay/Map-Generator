@@ -29,15 +29,37 @@ namespace Gdiplus
 
 #include "map.h"
 
+std::deque<std::string> buffer = {}; //a buffer of msgs to send to the server
+int turn = 0; //variable telling whose turn it is
+int harvest = 1; // used to prevent fish from being harvested more than  once per turn
+//SERVER SETTINGS -------------------------------------
+bool connected = true;
+std::string IP = "70.136.29.184";
+//std::string IP = "192.168.1.140";
+int port = 1234;
+SOCKET sock;
+std::vector<Player> players = {};
 
+//Map Making Variables
+bool MM_active = false;
+int MM_selected = 0;
+std::deque<Tile> MM_Tile = { Tile(), Tile(), Tile() };
+
+//Game Loop Variables
+float fTargetFrameTime = 1.0f / 60.0; // Virtual FPS of 60fps
+float fAccumulatedTime = 0.0f;
+
+
+//List of units, buildings, and policies
+
+//-----------------------------------------------------
+float elapsedTime = 0.0f;
+float targetTime = .01f;
+
+//--------------------------------------------------------------------------------------------
 
 // Handles main game loop
 int main() {
-	//Game Loop Variables
-	float fTargetFrameTime = 1.0f / 60.0; // Virtual FPS of 60fps
-	float fAccumulatedTime = 0.0f;
-	float elapsedTime = 0.0f;
-	float targetTime = .01f;
 	UI.W = 1920;
 	UI.H = 1080;
 	window.create(sf::VideoMode(UI.W, UI.H), "TG2 DE", sf::Style::Fullscreen);

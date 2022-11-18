@@ -10,6 +10,9 @@ float MODI = std::max(.2, (MAPSIZE) / (2000.0));
 
 int timer;
 
+SEASON season = SUMMER;
+int cold = 1;
+
 
 std::vector<sf::Color> colors = {sf::Color::Red, sf::Color::Blue, sf::Color::Green, sf::Color::Yellow};
 Player p;

@@ -422,7 +422,7 @@ void DrawTile(std::vector<std::vector<Tile>>& map, int x, int y, int dX, int dY)
 			if ((x % 100) == timer / 4 || (UI.tH.y == y && UI.tH.x == x)) {
 				temp = -2;
 			}
-			drawSprite(sX, sY + 32, 16, 32, dX, dY + temp + offset - (16));
+			drawSprite(sX, sY + 32 * season, 16, 32, dX, dY + temp + offset - (16));
 		}
 		//Draw a Building
 		if (map[y][x].building > -1) {

@@ -30,7 +30,6 @@ namespace Gdiplus
 #include "map.h"
 
 
-
 // Handles main game loop
 int main() {
 	//Game Loop Variables

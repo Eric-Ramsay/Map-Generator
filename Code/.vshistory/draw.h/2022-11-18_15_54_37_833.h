@@ -363,18 +363,18 @@ void DrawTile(std::vector<std::vector<Tile>>& map, int x, int y, int dX, int dY)
 						}
 						if (side > 0) {
 							if (b == -1) {
-								drawSprite(sX + 14, sY, 2, 16, dX, dY, 1);
+								drawSprite(sX + 14, sY, 2, 16, dX, dY, 1, shade);
 							}
 							else {
-								drawSprite(sX, sY, 2, 16, dX + 14, dY, 1);
+								drawSprite(sX, sY, 2, 16, dX + 14, dY, 1, shade);
 							}
 						}
 						else {
 							if (a == -1) {
-								drawSprite(sX + 16, sY + 14, 16, 2, dX, dY, 1);
+								drawSprite(sX + 16, sY + 14, 16, 2, dX, dY, 1, shade);
 							}
 							else {
-								drawSprite(sX + 16, sY, 16, 2, dX, dY + 14, 1);
+								drawSprite(sX + 16, sY, 16, 2, dX, dY + 14, 1, shade);
 							}
 						}
 					}
@@ -422,7 +422,7 @@ void DrawTile(std::vector<std::vector<Tile>>& map, int x, int y, int dX, int dY)
 			if ((x % 100) == timer / 4 || (UI.tH.y == y && UI.tH.x == x)) {
 				temp = -2;
 			}
-			drawSprite(sX, sY + 32, 16, 32, dX, dY + temp + offset - (16));
+			drawSprite(sX, sY + 32 * season, 16, 32, dX, dY + temp + offset - (16));
 		}
 		//Draw a Building
 		if (map[y][x].building > -1) {

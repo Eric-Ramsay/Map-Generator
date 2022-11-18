@@ -31,6 +31,8 @@ namespace Gdiplus
 
 
 
+//--------------------------------------------------------------------------------------------
+
 // Handles main game loop
 int main() {
 	//Game Loop Variables

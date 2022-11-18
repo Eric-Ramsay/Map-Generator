@@ -29,15 +29,21 @@ namespace Gdiplus
 
 #include "map.h"
 
+//Game Loop Variables
+float fTargetFrameTime = 1.0f / 60.0; // Virtual FPS of 60fps
+float fAccumulatedTime = 0.0f;
 
+
+//List of units, buildings, and policies
+
+//-----------------------------------------------------
+float elapsedTime = 0.0f;
+float targetTime = .01f;
+
+//--------------------------------------------------------------------------------------------
 
 // Handles main game loop
 int main() {
-	//Game Loop Variables
-	float fTargetFrameTime = 1.0f / 60.0; // Virtual FPS of 60fps
-	float fAccumulatedTime = 0.0f;
-	float elapsedTime = 0.0f;
-	float targetTime = .01f;
 	UI.W = 1920;
 	UI.H = 1080;
 	window.create(sf::VideoMode(UI.W, UI.H), "TG2 DE", sf::Style::Fullscreen);
